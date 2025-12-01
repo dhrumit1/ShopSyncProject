@@ -1,0 +1,36 @@
+/* .Product-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+} */
+
+/* .Product-form-card,
+.Product-table-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+} */
+
+/* FORM STYLES */
+/* .Product-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */
+
+/* .Product-form-card input,
+.Product-form-card select,
+.Product-form-card textarea {
+  border-radius: 5px;
+  border: 1px solid #bbb;
+} */
+
+/* MOBILE RESPONSIVE */
+/* @media (max-width: 768px) {
+  .Product-container {
+    flex-direction: column;
+  }
+
+} */

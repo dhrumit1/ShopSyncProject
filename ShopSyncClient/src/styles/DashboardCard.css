@@ -1,0 +1,35 @@
+.dashboard-card {
+  background:#fff;
+  border-radius:12px;
+  padding:18px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  text-align:center;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.08);
+}
+.card-image {
+  width:72px;
+  height:72px;
+  object-fit:contain;
+}
+
+.card-title {
+  margin-top:12px;
+  font-weight:700;
+  font-size:15px;
+}
+
+.card-sub {
+  margin-top:6px;
+  color:#6b7280;
+  font-size:13px;
+}

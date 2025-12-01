@@ -1,0 +1,9 @@
+# .NET Core
+bin/
+obj/
+
+# React
+node_modules/
+
+# System files
+.env

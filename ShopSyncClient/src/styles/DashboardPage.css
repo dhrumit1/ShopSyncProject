@@ -1,0 +1,9 @@
+.dashboard-page {
+  font-size:22px; margin:0 0 16px 0;
+}
+
+.cards-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
