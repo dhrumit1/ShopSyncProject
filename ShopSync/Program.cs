@@ -36,7 +36,7 @@ app.UseHttpsRedirection();
 // Map endpoint groups
 app.MapCategoryEndpoints();
 app.MapProductEndpoints();
-app.MapCustomerEndpoints();
+//app.MapCustomerEndpoints();
 //app.MapBillEndpoints();
 //app.MapBillItemEndpoints();
 
