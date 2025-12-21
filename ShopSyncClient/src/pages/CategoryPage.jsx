@@ -103,7 +103,7 @@ function CategoryPage() {
             {!editId && (
               <>
                 <div className="flexrow">
-                <label style={{ width: "85px", marginLeft: "26px"}}>Category ID</label>
+                <label className="required" style={{ width: "115px"}}>Category ID</label>
                 <input type="text" value={categoryId} maxLength={5} onChange={(e) => setCategoryId(e.target.value)} required style={{ width: "80px" }} />
                 </div>
               </>
@@ -113,7 +113,7 @@ function CategoryPage() {
             {editId && (
               <>
                 <div className="flexrow">
-                <label style={{ width: "85px", marginLeft: "26px"}}>Category ID</label>
+                <label className="required" style={{ width: "115px"}}>Category ID</label>
                 <input type="text" value={categoryId} disabled style={{ width: "80px" }} />
                 </div>
               </>
@@ -121,7 +121,7 @@ function CategoryPage() {
 
             {/* CATEGORY NAME FIELD */}
             <div className="flexrow">
-            <label style={{ width: "111px" }}>Category Name</label>
+            <label className="required" style={{ width: "115px" }}>Category Name</label>
             <input type="text" value={categoryName} maxLength={30} onChange={(e) => setCategoryName(e.target.value)} required style={{ width: "430px" }}/>
             </div>
 

@@ -46,12 +46,12 @@ function InvoicePage() {
 
         {/* TOP SECTION */}
         <div className="invoice-top" style={{display: "flex", gap: "10px"}}>
-            <div className="comman-form-card" style={{ flex: "0 0 25%" }}>
+            <div className="comman-form-card" style={{ flex: "0 0 40%" }}>
                 <h3 className="heading3">Invoice Info</h3>
 
                 <div className="comman-section">
                     <div className="flexrow">
-                        <label style={{ width: "100px" }}>Invoice No</label>
+                        <label className="required" style={{ width: "100px" }}>Invoice No</label>
                         <input
                             type="text"
                             value={invoiceNo}
@@ -75,12 +75,12 @@ function InvoicePage() {
                 </div>
             </div>
 
-            <div className="comman-form-card" style={{ flex: "0 0 45%" }}>
+            <div className="comman-form-card" style={{ flex: "0 0 50%" }}>
               <h3 className="heading3">Customer Details</h3>
 
               <div className="comman-section">
                 <div className="flexrow">
-                  <label style={{ width: "120px" }}>Customer ID</label>
+                  <label className="required" style={{ width: "120px" }}>Customer ID</label>
                   <input
                     type="text"
                     value={customerId}
@@ -92,7 +92,7 @@ function InvoicePage() {
                 </div>
 
                 <div className="flexrow">
-                  <label style={{ width: "120px" }}>Customer Name</label>
+                  <label className="required" style={{ width: "120px" }}>Customer Name</label>
                   <input
                     type="text"
                     maxLength={30}

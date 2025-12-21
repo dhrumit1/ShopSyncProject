@@ -95,7 +95,7 @@ function CustomerPage() {
 
             {!editId && (
               <div className="flexrow">
-                <label style={{ width: "120px" }}>Customer ID</label>
+                <label className="required" style={{ width: "120px" }}>Customer ID</label>
                 <input
                   type="text"
                   value={customerId}
@@ -109,13 +109,13 @@ function CustomerPage() {
 
             {editId && (
               <div className="flexrow">
-                <label style={{ width: "120px" }}>Customer ID</label>
+                <label className="required" style={{ width: "120px" }}>Customer ID</label>
                 <input type="text" value={customerId} disabled style={{ width: "120px" }} />
               </div>
             )}
 
             <div className="flexrow">
-              <label style={{ width: "120px" }}>Customer Name</label>
+              <label className="required" style={{ width: "120px" }}>Customer Name</label>
               <input
                 type="text"
                 maxLength={30}
