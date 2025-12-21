@@ -19,6 +19,7 @@ const Navbar = () => {
           <Link to="/categories">Categories</Link>
           <Link to="/products">Products</Link>
           <Link to="/customers">Customers</Link>
+          <Link to="/Invoice">Invoice</Link>
         </div>
 
         {/* Hamburger Icon */}

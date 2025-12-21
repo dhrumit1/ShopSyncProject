@@ -37,7 +37,6 @@ app.UseHttpsRedirection();
 app.MapCategoryEndpoints();
 app.MapProductEndpoints();
 app.MapCustomerEndpoints();
-//app.MapBillEndpoints();
-//app.MapBillItemEndpoints();
+app.MapInvoiceEndpoints();
 
 app.Run();

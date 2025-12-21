@@ -127,7 +127,7 @@ table td {
 }
 
 /* FORM */
-.comman-form-card form {
+.comman-form-card form, .comman-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
