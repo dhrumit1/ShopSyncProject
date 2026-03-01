@@ -182,13 +182,13 @@ function ProductPage() {
               </select>
             </div>
 
-            <button className="btn-primary" type="submit">
+            <button className="exbutton btn-primary" type="submit">
               {editId ? "Update" : "Add"}
             </button>
 
             {editId && (
               <button
-                className="btn-secondary"
+                className="exbutton btn-secondary"
                 type="button"
                 onClick={() => {
                   setEditId(null);
@@ -232,11 +232,11 @@ function ProductPage() {
                   <td>{p.price}</td>
                   <td>{p.categoryName}</td>
                   <td style={{ textAlign: "right" }}>
-                    <button className="btn-edit" onClick={() => editProduct(p)}>
+                    <button className="exbutton btn-edit" onClick={() => editProduct(p)}>
                       Edit
                     </button>
                     <button
-                      className="btn-delete"
+                      className="exbutton btn-delete"
                       onClick={() => deleteProduct(p.productId)}
                     >
                       Delete

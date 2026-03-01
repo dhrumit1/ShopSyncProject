@@ -166,6 +166,18 @@ table td {
 }
 
 
+/* inovice */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+}
 
-
+/* Mobile / Small screens */
+@media (max-width: 600px) {
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
 

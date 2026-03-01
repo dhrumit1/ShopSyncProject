@@ -8,8 +8,32 @@ namespace ShopSync.Endpoints
     {
         public static void MapInvoiceEndpoints(this WebApplication app)
         {
-            //app.MapGet("/api/bills", async (ShopSyncContext db) =>
-            //    await db.Bills.Include(b => b.Customer).ToListAsync());
+
+            //✅ Get invoic by Id(with customer and items)
+            //app.MapGet("/api/invoice/{invoiceNo}",async (string invoiceNo, ShopSyncContext db) =>
+            //{
+            //    var invoice = await db.Invoice.FirstOrDefaultAsync(x => x.InvoiceNo == invoiceNo);
+
+            //    if (invoice == null)
+            //        return Results.NotFound("Invoice not found");
+
+            //    var customer = await db.Customers.FirstOrDefaultAsync(c => c.CustomerId == invoice.CustomerId);
+
+            //    var items = await db.InvoiceDetail.Where(i => i.InvoiceNo == invoiceNo).ToListAsync();
+
+            //    var response = new InvoiceResponseDto
+            //    {
+            //        Invoice = invoice,
+            //        Customer = customer,
+            //        Items = items
+            //    };
+
+            //    return Results.Ok(response);
+                
+            //});
+
+            //app.MapGet("/api/invoice", async (ShopSyncContext db) =>
+            //    await db.Invoice.Include(b => b.InvoiceDetail).ToListAsync());
 
             // ✅ Get bill by Id (with customer and items)
             //app.MapGet("/api/bills/{id}", async (int id, ShopSyncContext db) =>

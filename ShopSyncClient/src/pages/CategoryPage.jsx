@@ -104,7 +104,7 @@ function CategoryPage() {
               <>
                 <div className="flexrow">
                 <label className="required" style={{ width: "115px"}}>Category ID</label>
-                <input type="text" value={categoryId} maxLength={5} onChange={(e) => setCategoryId(e.target.value)} required style={{ width: "80px" }} />
+                <input type="text" className="required-field" value={categoryId} maxLength={5} onChange={(e) => setCategoryId(e.target.value)} required style={{ width: "80px" }} />
                 </div>
               </>
             )}
@@ -114,7 +114,7 @@ function CategoryPage() {
               <>
                 <div className="flexrow">
                 <label className="required" style={{ width: "115px"}}>Category ID</label>
-                <input type="text" value={categoryId} disabled style={{ width: "80px" }} />
+                <input type="text" className="required-field" value={categoryId} disabled style={{ width: "80px" }} />
                 </div>
               </>
             )}
@@ -122,13 +122,13 @@ function CategoryPage() {
             {/* CATEGORY NAME FIELD */}
             <div className="flexrow">
             <label className="required" style={{ width: "115px" }}>Category Name</label>
-            <input type="text" value={categoryName} maxLength={30} onChange={(e) => setCategoryName(e.target.value)} required style={{ width: "430px" }}/>
+            <input type="text" className="required-field" value={categoryName} maxLength={30} onChange={(e) => setCategoryName(e.target.value)} style={{ width: "430px" }}/>
             </div>
 
-            <button type="submit" className="btn-primary">{editId ? "Update" : "Add"}</button>
+            <button type="submit" className="exbutton btn-primary">{editId ? "Update" : "Add"}</button>
 
             {editId && (
-              <button type="button" className="btn-secondary"
+              <button type="button" className="exbutton btn-secondary"
                 onClick={() => {
                   setEditId(null);
                   setCategoryId("");
@@ -163,14 +163,14 @@ function CategoryPage() {
                   <td>{cat.categoryName}</td>
                   <td style={{ textAlign: "right" }}>
                     <button
-                      className="btn-edit"
+                      className="exbutton btn-edit"
                       onClick={() => editCategorie(cat)}
                     >
                       Edit
                     </button>
 
                     <button
-                      className="btn-delete"
+                      className="exbutton btn-delete"
                       onClick={() => deleteCategorie(cat.categoryId)}
                     >
                       Delete
