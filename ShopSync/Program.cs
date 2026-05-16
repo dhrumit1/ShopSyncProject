@@ -3,8 +3,6 @@ using ShopSync.Endpoints;
 using ShopSync.Data;
 using DotNetEnv;
 
-Env.Load();
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = Environment.GetEnvironmentVariable("NEON_CONNECTION");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ShopSyncContext>(options =>
     options.UseNpgsql(connectionString));
@@ -20,7 +18,10 @@ builder.Services.AddDbContext<ShopSyncContext>(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
-        policy => policy.WithOrigins("https://shopsyncsolution.netlify.app")
+        policy => policy.WithOrigins(
+                                    "https://shopsyncsolution.netlify.app",
+                                    "https://localhost:5173"
+                                     )
                         .AllowAnyHeader()
                         .AllowAnyMethod());
 });
@@ -43,9 +44,5 @@ app.MapCategoryEndpoints();
 app.MapProductEndpoints();
 app.MapCustomerEndpoints();
 app.MapInvoiceEndpoints();
-
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-
-app.Urls.Add($"http://*:{port}");
 
 app.Run();
