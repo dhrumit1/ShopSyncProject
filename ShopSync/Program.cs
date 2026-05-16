@@ -20,7 +20,7 @@ builder.Services.AddDbContext<ShopSyncContext>(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
-        policy => policy.WithOrigins("https://shopsyncproject.onrender.com")
+        policy => policy.WithOrigins("https://shopsyncsolution.netlify.app")
                         .AllowAnyHeader()
                         .AllowAnyMethod());
 });
