@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using ShopSync.Endpoints;
 using ShopSync.Data;
+using DotNetEnv;
+
+Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connectionString = Environment.GetEnvironmentVariable("NEON_CONNECTION");
+
 builder.Services.AddDbContext<ShopSyncContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
 
 builder.Services.AddCors(options =>
 {
