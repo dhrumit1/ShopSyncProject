@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopSync.Data;
 using ShopSync.Models;
+using System.Linq;
 
 namespace ShopSync.Endpoints
 {
@@ -9,6 +10,25 @@ namespace ShopSync.Endpoints
         public static void MapInvoiceEndpoints(this WebApplication app)
         {
 
+            app.MapGet("/api/categoryproducts/{id}", async (string id, ShopSyncContext db) =>
+            {
+               var category = await db.Categories.FindAsync(id);
+
+                if (category is null)
+                    return Results.NotFound("Category not found");
+
+                var products = await db.Products
+                    .Where(p => p.CategoryId == id)
+                    .Select(p => new
+                    {
+                        p.ProductId,
+                        p.ProductName,
+                        p.Price
+                    })
+                    .ToListAsync();
+
+                return Results.Ok(products);
+            });
             //✅ Get invoic by Id(with customer and items)
             //app.MapGet("/api/invoice/{invoiceNo}",async (string invoiceNo, ShopSyncContext db) =>
             //{
@@ -29,7 +49,7 @@ namespace ShopSync.Endpoints
             //    };
 
             //    return Results.Ok(response);
-                
+
             //});
 
             //app.MapGet("/api/invoice", async (ShopSyncContext db) =>

@@ -3,6 +3,7 @@ import api from "../api/ApiClient";
 import PageContainer from "../components/PageContainer";
 import PopupMessage from "../components/PopupMessage";
 import "../styles/InvoicePage.css";
+import ProductsCards from "../components/ProductsCards";
 
 function InvoicePage() {
   const [customers, setCustomers] = useState([]);
@@ -197,48 +198,7 @@ function InvoicePage() {
         </div>
 
         {/* BOTTOM – INVOICE TABLE */}
-        <div className="comman-table-card">
-          <div className="table-header">
-            <h3 className="heading3">Invoice Details</h3>
-            <button className="exbutton btn-primary">+</button>
-          </div>
-
-          <table className="Category-table">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Product</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-                <th style={{ textAlign: "right" }}>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {invoiceItems.map((i, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{i.productName}</td>
-                  <td>{i.qty}</td>
-                  <td>{i.price}</td>
-                  <td>{i.total}</td>
-                  <td style={{ textAlign: "right" }}>
-                    <button
-                      className="btn-delete"
-                      onClick={() =>
-                        setInvoiceItems(
-                          invoiceItems.filter((_, idx) => idx !== index)
-                        )
-                      }
-                    >
-                      Remove
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ProductsCards />
       </div>
 
       <PopupMessage
