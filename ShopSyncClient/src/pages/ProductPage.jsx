@@ -121,7 +121,7 @@ function ProductPage() {
             {/* PRODUCT ID FIELD (only in add mode) */}
             {!editId && (
               <div className="flexrow">
-                <label style={{ width: "110px" }}>Product ID</label>
+                <label className="required" style={{ width: "110px" }}>Product ID</label>
                 <input type="text" value={productId} maxLength={10} required onChange={(e) => setProductId(e.target.value)} style={{ width: "150px" }} />
               </div>
             )}
@@ -129,14 +129,14 @@ function ProductPage() {
             {/* Product ID disabled in edit mode */}
             {editId && (
               <div className="flexrow">
-                <label style={{ width: "110px" }}>Product ID</label>
+                <label className="required" style={{ width: "110px" }}>Product ID</label>
                 <input type="text" value={productId} disabled style={{ width: "150px" }} />
               </div>
             )}
 
             {/* PRODUCT NAME */}
             <div className="flexrow">
-              <label style={{ width: "110px" }}>Product Name</label>
+              <label className="required" style={{ width: "110px" }}>Product Name</label>
               <input type="text" value={productName} maxLength={30} required onChange={(e) => setProductName(e.target.value)} style={{ width: "430px" }} />
             </div>
 
@@ -166,7 +166,7 @@ function ProductPage() {
 
             {/* CATEGORY DROPDOWN */}
             <div className="flexrow">
-              <label style={{ width: "110px" }}>Category</label>
+              <label className="required" style={{ width: "110px" }}>Category</label>
               <select
                 value={categoryId}
                 required
@@ -182,13 +182,13 @@ function ProductPage() {
               </select>
             </div>
 
-            <button className="btn-primary" type="submit">
+            <button className="exbutton btn-primary" type="submit">
               {editId ? "Update" : "Add"}
             </button>
 
             {editId && (
               <button
-                className="btn-secondary"
+                className="exbutton btn-secondary"
                 type="button"
                 onClick={() => {
                   setEditId(null);
@@ -232,11 +232,11 @@ function ProductPage() {
                   <td>{p.price}</td>
                   <td>{p.categoryName}</td>
                   <td style={{ textAlign: "right" }}>
-                    <button className="btn-edit" onClick={() => editProduct(p)}>
+                    <button className="exbutton btn-edit" onClick={() => editProduct(p)}>
                       Edit
                     </button>
                     <button
-                      className="btn-delete"
+                      className="exbutton btn-delete"
                       onClick={() => deleteProduct(p.productId)}
                     >
                       Delete

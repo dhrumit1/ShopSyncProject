@@ -95,7 +95,7 @@ function CustomerPage() {
 
             {!editId && (
               <div className="flexrow">
-                <label style={{ width: "120px" }}>Customer ID</label>
+                <label className="required" style={{ width: "120px" }}>Customer ID</label>
                 <input
                   type="text"
                   value={customerId}
@@ -109,13 +109,13 @@ function CustomerPage() {
 
             {editId && (
               <div className="flexrow">
-                <label style={{ width: "120px" }}>Customer ID</label>
+                <label className="required" style={{ width: "120px" }}>Customer ID</label>
                 <input type="text" value={customerId} disabled style={{ width: "120px" }} />
               </div>
             )}
 
             <div className="flexrow">
-              <label style={{ width: "120px" }}>Customer Name</label>
+              <label className="required" style={{ width: "120px" }}>Customer Name</label>
               <input
                 type="text"
                 maxLength={30}
@@ -148,13 +148,13 @@ function CustomerPage() {
               />
             </div>
 
-            <button type="submit" className="btn-primary">
+            <button type="submit" className="exbutton btn-primary">
               {editId ? "Update" : "Add"}
             </button>
 
             {editId && (
               <button type="button"
-                className="btn-secondary"
+                className="exbutton btn-secondary"
                 onClick={() => {
                   setEditId(null);
                   setCustomerId("");
@@ -193,8 +193,8 @@ function CustomerPage() {
                   <td>{c.mobileNumber}</td>
                   <td>{c.address}</td>
                   <td style={{ textAlign: "right" }}>
-                    <button className="btn-edit" onClick={() => editCustomer(c)}>Edit</button>
-                    <button className="btn-delete" onClick={() => deleteCustomer(c.customerId)}>Delete</button>
+                    <button className="exbutton btn-edit" onClick={() => editCustomer(c)}>Edit</button>
+                    <button className="exbutton btn-delete" onClick={() => deleteCustomer(c.customerId)}>Delete</button>
                   </td>
                 </tr>
               ))}
