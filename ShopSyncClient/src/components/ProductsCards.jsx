@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../api/ApiClient";
+import "../styles/ProductsCards.css";
 
 function ProductsCards({ onProductClick }) {
 
@@ -42,51 +43,18 @@ function ProductsCards({ onProductClick }) {
   }, [selectedCategory]);
 
   return (
-    <div
-      className="comman-form-card"
-      style={{ marginTop: "15px" }}
-    >
+    <div className="comman-form-card product-cards" >
 
       {/* Category Scroll */}
-      <div
-        style={{
-          display: "flex",
-          overflowX: "auto",
-          gap: "10px",
-          paddingBottom: "10px",
-          marginBottom: "15px",
-        }}
-      >
+      <div className="all-categorys-section" >
 
         {categories.map((cat) => (
-
-          <div
-            key={cat.categoryId}
-
-            onClick={() =>
-              setSelectedCategory(cat.categoryId)
-            }
-
+          <div key={cat.categoryId} className="all-categorys" onClick={() => setSelectedCategory(cat.categoryId)}
             style={{
-              minWidth: "100px",
-              padding: "10px",
-              borderRadius: "10px",
-              textAlign: "center",
-              fontWeight: "bold",
-              cursor: "pointer",
-
               background:
-                selectedCategory === cat.categoryId
-                  ? "#2874f0"
-                  : "#fff",
-
+                selectedCategory === cat.categoryId ? "#2874f0":"#fff",
               color:
-                selectedCategory === cat.categoryId
-                  ? "#fff"
-                  : "#000",
-
-              boxShadow:
-                "0 2px 5px rgba(0,0,0,0.1)",
+                selectedCategory === cat.categoryId ? "#fff" : "#000",
             }}
           >
             {cat.categoryName}
@@ -97,58 +65,21 @@ function ProductsCards({ onProductClick }) {
       </div>
 
       {/* Product Grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "12px",
-        }}
-      >
-
+      <div className="product-grid" >
         {products.map((product) => (
-
-          <div
-            key={product.productId}
-
-            onClick={() => onProductClick(product)}
-
-            style={{
-              background: "#fff",
-              borderRadius: "10px",
-              padding: "10px",
-              textAlign: "center",
-              boxShadow:
-                "0 2px 5px rgba(0,0,0,0.1)",
-              cursor: "pointer",
-            }}
-          >
+          <div key={product.productId} className="products" onClick={() => onProductClick(product)} >
 
             <img
               src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"
               alt={product.productName}
-              style={{
-                width: "100%",
-                height: "150px",
-                objectFit: "cover",
-                borderRadius: "10px",
-              }}
+              className="products-img"
             />
 
-            <h4
-              style={{
-                marginTop: "10px",
-                fontSize: "15px",
-              }}
-            >
+            <h4 className="products-name">
               {product.productName}
             </h4>
 
-            <p
-              style={{
-                color: "green",
-                fontWeight: "bold",
-              }}
-            >
+            <p className="products-price">
               ₹ {product.price}
             </p>
 

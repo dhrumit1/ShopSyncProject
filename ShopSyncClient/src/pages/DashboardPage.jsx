@@ -10,7 +10,7 @@ const DashboardPage = () => {
     { title: "Categories", image: "/icons/categories.svg", path: "/categories" },
     { title: "Products", image: "/icons/products.svg", path: "/products" },
     { title: "Customers", image: "/icons/customers.svg", path: "/customers" },
-    { title: "Billing", image: "/icons/billing.svg", path: "/billing" },
+    { title: "Billing", image: "/icons/billing.svg", path: "/Invoice" },
     { title: "Reports", image: "/icons/reports.svg", path: "/reports" },
   ];
 

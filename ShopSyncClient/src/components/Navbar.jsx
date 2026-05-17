@@ -19,7 +19,7 @@ const Navbar = () => {
           <Link to="/categories">Categories</Link>
           <Link to="/products">Products</Link>
           <Link to="/customers">Customers</Link>
-          <Link to="/Invoice">Invoice</Link>
+          <Link to="/Invoice">Billing</Link>
         </div>
 
         {/* Hamburger Icon */}
@@ -35,6 +35,8 @@ const Navbar = () => {
         <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
         <Link to="/categories" onClick={() => setMenuOpen(false)}>Categories</Link>
         <Link to="/products" onClick={() => setMenuOpen(false)}>Products</Link>
+        <Link to="/customers" onClick={() => setMenuOpen(false)}>Customers</Link>
+        <Link to="/Invoice" onClick={() => setMenuOpen(false)}>Billing</Link>
       </div>
     </>
   );

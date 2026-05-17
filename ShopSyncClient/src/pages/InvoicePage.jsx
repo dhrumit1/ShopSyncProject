@@ -6,13 +6,15 @@ import "../styles/InvoicePage.css";
 import ProductsCards from "../components/ProductsCards";
 
 function InvoicePage() {
+
+  const [invoiceNo, setInvoiceNo] = useState("");
+  const [invoiceDate, setInvoiceDate] = useState("");
+
   const [customers, setCustomers] = useState([]);
   const [customerId, setCustomerId] = useState("");
   const [customerName, setCustomerName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [address, setAddress] = useState("");
-  const [invoiceNo, setInvoiceNo] = useState("");
-  const [invoiceDate, setInvoiceDate] = useState("");
 
   const [invoiceItems, setInvoiceItems] = useState([]);
   const [popup, setPopup] = useState({
@@ -76,11 +78,12 @@ function InvoicePage() {
 
   // added
   return (
-    <PageContainer title="Invoice">
+    <PageContainer title="Invoice Details">
       <div className="comman-container">
         {/* TOP SECTION */}
         <div className="invoice-top" style={{ display: "flex", gap: "10px" }}>
-          <div className="comman-form-card" style={{ flex: "0 0 40%" }}>
+          
+          <div className="comman-form-card invoice-info">
             <h3 className="heading3">Invoice Info</h3>
 
             <div className="comman-section">
@@ -119,7 +122,7 @@ function InvoicePage() {
             </div>
           </div>
 
-          <div className="comman-form-card" style={{ flex: "0 0 50%" }}>
+          <div className="comman-form-card customer-details">
             <h3 className="heading3">Customer Details</h3>
 
             <div className="comman-section">
@@ -138,7 +141,7 @@ function InvoicePage() {
               </div>
 
               <div className="flexrow">
-                <label className="required" style={{ width: "120px" }}>
+                <label style={{ width: "120px" }}>
                   Customer Name
                 </label>
                 <input
@@ -146,40 +149,18 @@ function InvoicePage() {
                   maxLength={30}
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  required
+                  disabled
                   style={{ width: "300px" }}
                 />
               </div>
 
-              <div className="flexrow">
-                <label style={{ width: "120px" }}>Mobile</label>
-                <input
-                  type="text"
-                  maxLength={10}
-                  value={mobileNumber}
-                  onChange={(e) => setMobileNumber(e.target.value)}
-                  style={{ width: "180px" }}
-                />
-              </div>
-
-              <div className="flexrow">
-                <label style={{ width: "120px" }}>Address</label>
-                <input
-                  type="text"
-                  maxLength={100}
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                  style={{ width: "300px" }}
-                />
-              </div>
             </div>
           </div>
 
-          <div className="comman-form-card" style={{ flex: "0 0 25%" }}>
+          <div className="comman-form-card bill-summary">
             <h3 className="heading3">Bill Summary</h3>
 
-            <p><b>Total Items:</b> {invoiceItems.length}</p>
-            <p><b>Total Amount:</b> ₹ {totalAmount}</p>
+            <p className="total-amount"><b>Total Amount:</b> ₹ {totalAmount}</p>
 
             <button
               className="exbutton btn-primary"
