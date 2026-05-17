@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ShopSync.Endpoints;
 using ShopSync.Data;
-using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+
+// If not found, use appsettings.Development.json
+if (string.IsNullOrEmpty(connectionString))
+{
+    connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+}
 
 builder.Services.AddDbContext<ShopSyncContext>(options =>
     options.UseNpgsql(connectionString));
