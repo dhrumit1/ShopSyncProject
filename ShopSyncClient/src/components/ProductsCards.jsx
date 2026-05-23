@@ -34,7 +34,7 @@ function ProductsCards({ onProductClick }) {
     // Prevent API call if category not selected
     if (!selectedCategory) return;
 
-    api.get(`/api/categoryproducts/${selectedCategory}`)
+    api.get(`/api/allcartproducts/${selectedCategory}`)
       .then((res) => setProducts(res.data))
       .catch((err) =>
         console.error("Error fetching products:", err)

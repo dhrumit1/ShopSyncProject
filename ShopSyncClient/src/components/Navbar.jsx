@@ -19,6 +19,7 @@ const Navbar = () => {
           <Link to="/categories">Categories</Link>
           <Link to="/products">Products</Link>
           <Link to="/customers">Customers</Link>
+          <Link to="/Cart">Cart</Link>
           <Link to="/Invoice">Billing</Link>
         </div>
 
@@ -36,6 +37,7 @@ const Navbar = () => {
         <Link to="/categories" onClick={() => setMenuOpen(false)}>Categories</Link>
         <Link to="/products" onClick={() => setMenuOpen(false)}>Products</Link>
         <Link to="/customers" onClick={() => setMenuOpen(false)}>Customers</Link>
+        <Link to="/Cart" onClick={() => setMenuOpen(false)}>Cart</Link>
         <Link to="/Invoice" onClick={() => setMenuOpen(false)}>Billing</Link>
       </div>
     </>

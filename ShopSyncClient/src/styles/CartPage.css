@@ -1,0 +1,24 @@
+.cart-top {
+    width: 100%;
+}
+
+.total-amountlable, .total-amountprice {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.customername {
+    border-bottom: 1px solid black;
+}
+
+@media (max-width: 600px) {
+
+  .comman-form-card {
+    padding: 15px;
+  }
+
+  .comman-container {
+    gap: 0px;
+  }
+
+}
