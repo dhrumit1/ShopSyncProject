@@ -1,3 +1,10 @@
+.categoryid {
+  width: 80px;
+}
+
+.categoryname {
+  width: 430px;
+}
 /* .Category-container {
   display: flex;
   gap: 20px;
@@ -26,9 +33,9 @@
 } */
 
 /* MOBILE */
-/* @media (max-width: 768px) {
-  .Category-container {
-    flex-direction: column;
+@media (max-width: 600px) {
+  .categoryname {
+    width: 195px;
   }
-} */
+}
 

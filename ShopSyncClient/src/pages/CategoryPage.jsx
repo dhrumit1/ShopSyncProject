@@ -89,7 +89,7 @@ function CategoryPage() {
   };
 
   return (
-    <PageContainer title="Products Category Management">
+    <PageContainer title="Category Management">
       <div className="comman-container">
 
         {/* FORM CARD */}
@@ -104,7 +104,7 @@ function CategoryPage() {
               <>
                 <div className="flexrow">
                 <label className="required" style={{ width: "115px"}}>Category ID</label>
-                <input type="text" className="required-field" value={categoryId} maxLength={5} onChange={(e) => setCategoryId(e.target.value)} required style={{ width: "80px" }} />
+                <input type="text" className="required-field categoryid" value={categoryId} maxLength={5} onChange={(e) => setCategoryId(e.target.value)} required />
                 </div>
               </>
             )}
@@ -114,7 +114,7 @@ function CategoryPage() {
               <>
                 <div className="flexrow">
                 <label className="required" style={{ width: "115px"}}>Category ID</label>
-                <input type="text" className="required-field" value={categoryId} disabled style={{ width: "80px" }} />
+                <input type="text" className="required-field categoryid" value={categoryId} disabled />
                 </div>
               </>
             )}
@@ -122,7 +122,7 @@ function CategoryPage() {
             {/* CATEGORY NAME FIELD */}
             <div className="flexrow">
             <label className="required" style={{ width: "115px" }}>Category Name</label>
-            <input type="text" className="required-field" value={categoryName} maxLength={30} onChange={(e) => setCategoryName(e.target.value)} style={{ width: "430px" }}/>
+            <input type="text" className="required-field categoryname" value={categoryName} maxLength={30} onChange={(e) => setCategoryName(e.target.value)} />
             </div>
 
             <button type="submit" className="exbutton btn-primary">{editId ? "Update" : "Add"}</button>

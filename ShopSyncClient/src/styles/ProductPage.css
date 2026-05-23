@@ -1,3 +1,25 @@
+.productid {
+  width: 150px;
+}
+
+.productname {
+  width: 430px;
+}
+
+.description {
+  width: 350px;
+}
+
+.price {
+  width: 120px;
+}
+
+.selectcategory {
+  width: 180px;
+  height: 28px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
 /* .Product-container {
   display: flex;
   gap: 20px;
@@ -28,9 +50,8 @@
 } */
 
 /* MOBILE RESPONSIVE */
-/* @media (max-width: 768px) {
-  .Product-container {
-    flex-direction: column;
+@media (max-width: 600px) {
+  .productname, .description {
+    width: 195px;
   }
-
-} */
+}

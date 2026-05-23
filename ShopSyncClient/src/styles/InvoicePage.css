@@ -1,3 +1,9 @@
+.invoice-top {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
 .invoice-info {
   flex: 0 0 40%;
 }

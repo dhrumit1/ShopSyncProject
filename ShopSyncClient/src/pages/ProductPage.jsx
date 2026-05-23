@@ -122,7 +122,7 @@ function ProductPage() {
             {!editId && (
               <div className="flexrow">
                 <label className="required" style={{ width: "110px" }}>Product ID</label>
-                <input type="text" value={productId} maxLength={10} required onChange={(e) => setProductId(e.target.value)} style={{ width: "150px" }} />
+                <input className="productid" type="text" value={productId} maxLength={10} required onChange={(e) => setProductId(e.target.value)} />
               </div>
             )}
 
@@ -130,37 +130,37 @@ function ProductPage() {
             {editId && (
               <div className="flexrow">
                 <label className="required" style={{ width: "110px" }}>Product ID</label>
-                <input type="text" value={productId} disabled style={{ width: "150px" }} />
+                <input className="productid" type="text" value={productId} disabled />
               </div>
             )}
 
             {/* PRODUCT NAME */}
             <div className="flexrow">
               <label className="required" style={{ width: "110px" }}>Product Name</label>
-              <input type="text" value={productName} maxLength={30} required onChange={(e) => setProductName(e.target.value)} style={{ width: "430px" }} />
+              <input className="productname" type="text" value={productName} maxLength={30} required onChange={(e) => setProductName(e.target.value)} />
             </div>
 
             {/* DESCRIPTION */}
             <div className="flexrow">
               <label style={{ width: "110px" }}>Description</label>
-              <input 
+              <input
+                className="description" 
                 type="text"
                 value={description}
                 maxLength={50}
                 onChange={(e) => setDescription(e.target.value)}
-                style={{ width: "350px" }}
               />
             </div>
 
             {/* PRICE */}
             <div className="flexrow">
               <label style={{ width: "110px" }}>Price</label>
-              <input 
+              <input
+                className="price" 
                 type="number"
                 value={price}
                 maxLength={10}
                 onChange={(e) => setPrice(e.target.value)}
-                style={{ width: "120px" }}
               />
             </div>
 
@@ -168,10 +168,10 @@ function ProductPage() {
             <div className="flexrow">
               <label className="required" style={{ width: "110px" }}>Category</label>
               <select
+                className="selectcategory"
                 value={categoryId}
                 required
                 onChange={(e) => setCategoryId(e.target.value)}
-                style={{ width: "180px" }}
               >
                 <option value="">-- Select Category --</option>
                 {categories.map((c) => (

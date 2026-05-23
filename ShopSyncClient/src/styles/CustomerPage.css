@@ -1,0 +1,21 @@
+.customerid {
+    width: 120px;
+}
+
+.customername {
+    width: 350px;
+}
+
+.mobilenumber {
+    width: 200px;
+}
+
+.address {
+    width: 350px;
+}
+
+@media (max-width: 600px) {
+  .customername, .mobilenumber, .address {
+    width: 191px;
+  }
+}

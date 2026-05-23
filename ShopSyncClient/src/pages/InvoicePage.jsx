@@ -81,7 +81,7 @@ function InvoicePage() {
     <PageContainer title="Invoice Details">
       <div className="comman-container">
         {/* TOP SECTION */}
-        <div className="invoice-top" style={{ display: "flex", gap: "10px" }}>
+        <div className="invoice-top">
           
           <div className="comman-form-card invoice-info">
             <h3 className="heading3">Invoice Info</h3>

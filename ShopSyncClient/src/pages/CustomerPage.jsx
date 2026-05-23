@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../api/ApiClient";
 import PageContainer from "../components/PageContainer";
 import PopupMessage from "../components/PopupMessage";
-import "../styles/CategoryPage.css";
+import "../styles/CustomerPage.css";
 
 function CustomerPage() {
   const [customers, setCustomers] = useState([]);
@@ -97,11 +97,11 @@ function CustomerPage() {
               <div className="flexrow">
                 <label className="required" style={{ width: "120px" }}>Customer ID</label>
                 <input
+                  className="customerid"
                   type="text"
                   value={customerId}
                   maxLength={10}
                   onChange={(e) => setCustomerId(e.target.value)}
-                  style={{ width: "120px" }}
                   required
                 />
               </div>
@@ -110,41 +110,41 @@ function CustomerPage() {
             {editId && (
               <div className="flexrow">
                 <label className="required" style={{ width: "120px" }}>Customer ID</label>
-                <input type="text" value={customerId} disabled style={{ width: "120px" }} />
+                <input className="customerid" type="text" value={customerId} disabled />
               </div>
             )}
 
             <div className="flexrow">
               <label className="required" style={{ width: "120px" }}>Customer Name</label>
               <input
+                className="customername"
                 type="text"
                 maxLength={30}
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
                 required
-                style={{ width: "350px" }}
               />
             </div>
 
             <div className="flexrow">
               <label style={{ width: "120px" }}>Mobile Number</label>
               <input
+                className="mobilenumber"
                 type="text"
                 maxLength={10}
                 value={mobileNumber}
                 onChange={(e) => setMobileNumber(e.target.value)}
-                style={{ width: "200px" }}
               />
             </div>
 
             <div className="flexrow">
               <label style={{ width: "120px" }}>Address</label>
               <input
+                className="address"
                 type="text"
                 maxLength={100}
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                style={{ width: "350px" }}
               />
             </div>
 
